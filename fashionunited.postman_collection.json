@@ -1,0 +1,255 @@
+{
+	"variables": [],
+	"info": {
+		"name": "fashionunited",
+		"_postman_id": "93d83ef9-a200-584c-b577-072deb9e2d89",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "category list",
+			"request": {
+				"url": "http://localhost:3000/category",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "category list"
+			},
+			"response": []
+		},
+		{
+			"name": "post list",
+			"request": {
+				"url": "http://localhost:3000/post",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "post list"
+			},
+			"response": []
+		},
+		{
+			"name": "vew category",
+			"request": {
+				"url": "http://localhost:3000/category/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "view category"
+			},
+			"response": []
+		},
+		{
+			"name": "vew post",
+			"request": {
+				"url": "http://localhost:3000/post/4",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "view post"
+			},
+			"response": []
+		},
+		{
+			"name": "update category",
+			"request": {
+				"url": "http://localhost:3000/category/8/update",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "Category 08-04-2019",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "update category"
+			},
+			"response": []
+		},
+		{
+			"name": "update post",
+			"request": {
+				"url": "http://localhost:3000/post/1/update",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "Hello world demo",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "text",
+							"value": "Hello world message",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "categoryId",
+							"value": "1",
+							"type": "text",
+							"description": ""
+						}
+					]
+				},
+				"description": "update post"
+			},
+			"response": []
+		},
+		{
+			"name": "create category",
+			"request": {
+				"url": "http://localhost:3000/category",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "Lifestyle",
+							"type": "text",
+							"description": ""
+						}
+					]
+				},
+				"description": "create category"
+			},
+			"response": []
+		},
+		{
+			"name": "create post",
+			"request": {
+				"url": "http://localhost:3000/post",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "Hello world demo",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "text",
+							"value": "Hello world demo",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "categoryId",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "create post"
+			},
+			"response": []
+		},
+		{
+			"name": "Top3Categories",
+			"request": {
+				"url": "http://localhost:3000/top3categories",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Top3Categories"
+			},
+			"response": []
+		},
+		{
+			"name": "Seach In Post Content",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3000/search?searchText=demo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "searchText",
+							"value": "demo",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Seach In Post title,text and post category title"
+			},
+			"response": []
+		},
+		{
+			"name": "delete category",
+			"request": {
+				"url": "http://localhost:3000/category",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "2",
+							"type": "text",
+							"description": ""
+						}
+					]
+				},
+				"description": "delete category"
+			},
+			"response": []
+		}
+	]
+}

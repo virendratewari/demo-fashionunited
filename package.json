@@ -1,0 +1,33 @@
+{
+  "name": "fashionunited",
+  "version": "1.0.0",
+  "description": "nodejs api using Sequelize mysql",
+  "main": "app.js",
+  "scripts": {
+    "start:dev": "nodemon ./bin/.www",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec"
+  },
+  "author": "Virendra Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "config": "^3.0.1",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "mysql2": "^1.6.5",
+    "sequelize": "^4.42.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10",
+    "chai": "^4.1.2",
+    "chai-http": "^4.2.0",
+    "istanbul": "^0.4.4",
+    "mocha": "^5.2.0",
+    "mocha-istanbul": "^0.3.0",
+    "sinon": "^1.17.5",
+    "sinon-chai": "^2.8.0",
+    "jshint": "^2.9.6"
+  }
+}

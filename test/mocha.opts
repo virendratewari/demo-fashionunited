@@ -1,0 +1,5 @@
+server
+--require ./test/common.js
+--recursive
+--bail
+--timeout 20000
