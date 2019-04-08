@@ -1,4 +1,4 @@
-# Nodejs MVC pattern using sequelize mysql database API
+# Nodejs Rest API using sequelize mysql database
 
 To run, you just have MongoDB installed and running, and NodeJS installed.
 
