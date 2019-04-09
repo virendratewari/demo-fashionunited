@@ -1,6 +1,6 @@
 'use strict'
 //During the test the env variable is set to test
-process.env.NODE_ENV || 'test';
+process.env.NODE_ENV = 'test';
 
 let server = require("../../app");
 
@@ -65,7 +65,7 @@ describe("Post", () => {
             chai.request(server)
                 .post('/post/4/update')
                 .send({
-                    title: "Hello world 2019",
+                    title: "Hello world 2018-2019",
                 })
                 .end((err, res) => {
                     res.should.have.status(200);

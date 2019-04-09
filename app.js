@@ -3,7 +3,7 @@ const path = require('path');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-let config = require('config');
+require('dotenv').config();
 const cors = require('cors');
 
 // Set up the express app
@@ -14,7 +14,7 @@ app.use(cookieParser());
 app.use(cors());
 
 // Log requests to the console.
-if (config.util.getEnv('NODE_ENV') !== 'test') {
+if (process.env.NODE_ENV !== 'test') {
     app.use(logger("combined"));
 }
 

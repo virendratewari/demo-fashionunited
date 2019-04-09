@@ -2,14 +2,10 @@ const Category = require('../models').categories;
 const Post = require('../models').posts;
 const Sequelize = require('sequelize');
 const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.json')[env];
+const config = require(__dirname + '/../config/config.js')[env];
 
-let sequelize;
-if (config.use_env_variable) {
-    sequelize = new Sequelize(process.env[config.use_env_variable], config);
-} else {
-    sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
+let sequelize = new Sequelize(config.database, config.username, config.password, config);
+
 module.exports = {
     index(req, res) {
         Post.findAll({
@@ -63,27 +59,22 @@ module.exports = {
     },
     getPost(req, res) {
         var data = req.params;
-        Post
-            .findOne({
-                where: { id: data.id },
-                include: [{ model: Category }]
-            })
-            .then((post) => {
-                Post.update({ hits: sequelize.literal('hits + 1') }, { where: { id: data.id } }).then(() => {
-                    res.status(200).json(post);
-                });
-            }).catch((err) => {
-                throw new Error(err);
-            });
+        Post.findOne({
+            where: { id: data.id },
+            include: [{ model: Category }]
+        }).then((post) => {
+            return post.update({ hits: sequelize.literal('hits + 1') });
+        }).then((result) => {
+            res.status(200).json(result);
+        }).catch((err) => {
+            throw new Error(err);
+        });
     },
     updatePost(req, res) {
         let pid = req.params;
         let pdata = req.body;
         pdata.slug = pdata.title.replace(/[^A-Za-z0-9-]+/gi, '-').toLowerCase();
-        Post.update(
-            pdata,
-            { where: { id: pid.id } }
-        )
+        Post.update(pdata, { where: { id: pid.id } })
             .then((result) => {
                 res.status(200).json({ success: true });
             })
