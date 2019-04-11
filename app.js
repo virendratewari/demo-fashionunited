@@ -14,10 +14,9 @@ app.use(cookieParser());
 app.use(cors());
 
 // Log requests to the console.
-if (process.env.NODE_ENV !== 'test') {
+if (process.env.NODE_ENV !== 'production') {
     app.use(logger("combined"));
 }
-
 // Parse incoming requests data (https://github.com/expressjs/body-parser)
 app.use(bodyParser.urlencoded({ limit: "250mb", extended: true }));
 app.use(bodyParser.json({ limit: "250mb" }));
